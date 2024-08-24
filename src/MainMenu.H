@@ -14,6 +14,10 @@ extern SAMB_ptr mainmenu_n;
 extern SAMB_ptr mainmenu_h;
 extern SAMB_ptr mainmenu_q;
 
+extern SAMB_ptr mainmenu_background_seg;
+extern char Read_Buffer[30];
+
+extern int16_t current_menu_screen;
 
 
 #ifdef __cplusplus

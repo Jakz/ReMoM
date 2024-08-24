@@ -9,7 +9,7 @@
 #include "MoX_DBG.H"    /* Check_Release_Version() */
 
 #ifdef STU_DEBUG
-#include "STU_DBG.H"    /* DLOG() */
+#include "../stu/STU_DBG.H"    /* DLOG() */
 #endif
 
 #include <malloc.h>     /* malloc() */

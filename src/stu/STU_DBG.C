@@ -164,6 +164,7 @@ void dbg_prn(const char * fmt, ...)
     va_list args;
     va_start(args, fmt);
     vfprintf(Debug_Log_File, fmt, args);
+    printf(fmt, args);
     va_end(args);
     /*
         flush output buffer to disk, in case of crash

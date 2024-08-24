@@ -8,7 +8,7 @@
 #include "MoX.H"
 
 #ifdef STU_DEBUG
-#include "STU_DBG.H"
+#include "stu/STU_DBG.H"
 #endif
 
 

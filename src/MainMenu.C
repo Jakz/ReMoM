@@ -62,7 +62,8 @@ struct s_mouse_list mouse_list_mainmenu[1] = {
 // MGC dseg:52B4 g_GUI_String_1 dw 0
 // MGC dseg:52B6
 int16_t _load_button;
-// MGC dseg:52B8 _background_seg dw 0
+// MGC dseg:52B8 dw 0
+SAMB_ptr mainmenu_background_seg;
 // MGC dseg:52BA gsa_VORTEX_3_MenuQuitToDOS dw 0
 // MGC dseg:52BC
 int16_t _hof_button;

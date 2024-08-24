@@ -8,7 +8,7 @@
 #include "MoX_TYPE.H"
 
 #ifdef STU_DEBUG
-#include "STU_DBG.H"
+#include "stu/STU_DBG.H"
 extern int16_t DBG_In_MouseButtonLeft;
 extern int16_t DBG_In_MouseButtonRight;
 extern int16_t DBG_movement_map_grid_field_idx;

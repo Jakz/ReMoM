@@ -5,7 +5,7 @@
 #include "MoX.H"
 
 #ifdef STU_DEBUG
-#include "STU_DBG.H"
+#include "stu/STU_DBG.H"
 int16_t DBG_In_MouseButtonLeft = ST_FALSE;
 int16_t DBG_In_MouseButtonRight = ST_FALSE;
 int16_t DBG_movement_map_grid_field_idx = 0;

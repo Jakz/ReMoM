@@ -2,7 +2,7 @@
 #include "MoX_CFG.H"
 
 #ifdef STU_DEBUG
-#include "STU_DBG.H"
+#include "stu/STU_DBG.H"
 #endif
 
 #include <stdio.h>      /* FILE; fclose(), fopen(), fread(), fseek(); */

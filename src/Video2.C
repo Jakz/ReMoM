@@ -7,7 +7,7 @@
 #include "Video2.H"
 
 #ifdef STU_DEBUG
-#include "STU_DBG.H"
+#include "stu/STU_DBG.H"
 #endif
 
 #include <string.h>  /* memset() */

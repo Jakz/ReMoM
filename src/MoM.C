@@ -153,8 +153,7 @@ void Screen_Control(void)
 
         case scr_New_Game_Screen:
         {
-            // TODO  New_Game_Screen();
-            /* DEMO */  current_screen = scr_Main_Screen;
+            New_Game_Screen();
         } break;
 
         case scr_Quit_To_DOS:

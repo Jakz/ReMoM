@@ -292,7 +292,7 @@ void Draw_Mouse_On_Page(int16_t x, int16_t y);
 #include "WZD_o143.H"
 
 #ifdef STU_DEBUG
-#include "STU_DBG.H"
+#include "stu/STU_DBG.H"
 #endif
 
 #include "MoX_PFL.H"
@@ -360,6 +360,7 @@ uint16_t Get_Free_Blocks(SAMB_ptr SAMB_head);
 /*
     LBX_Load.C
 */
+/*
 // WZD s10p01
 SAMB_ptr LBX_Load(char* lbx_name, int16_t entry_num);
 // WZD s10p02
@@ -370,7 +371,9 @@ SAMB_ptr LBX_Reload_Next(char* lbx_name, int16_t entry_num, SAMB_ptr SAMB_head);
 SAMB_ptr LBX_Load_Data(char* lbx_name, int16_t entry_num, int16_t start_rec, int16_t num_recs, int16_t record_size);
 // WZD s10p12
 void LBX_Load_Data_Static(char* lbx_name, int16_t entry_num, SAMB_ptr SAMB_head, uint16_t start_rec, uint16_t num_recs, uint16_t record_size);
+*/
 
+#include "MoX/LBX_Load.h"
 
 
 /*

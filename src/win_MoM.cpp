@@ -6,7 +6,7 @@
 #include "MoX.H"  /* ~ MoX - Common */
 
 #ifdef STU_DEBUG
-#include "STU_DBG.H"
+#include "stu/STU_DBG.H"
 #endif
 
 
@@ -19,10 +19,58 @@ char * GAME_FONT_FILE = &MOM_FONT_FILE[0];  // Create a Pointer to the Character
 // char* game_font_file = &mom_font_file[0];   // Create a pointer to the string at compile time.
 
 
+#include <io.h>
+#include <fcntl.h>
+
+static const WORD MAX_CONSOLE_LINES = 500;
+#ifdef _DEBUG
+void RedirectIOToConsole()
+{
+  CONSOLE_SCREEN_BUFFER_INFO coninfo;
+
+  // allocate a console for this app
+  AllocConsole();
+
+  // set the screen buffer to be big enough to let us scroll text
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
+  coninfo.dwSize.Y = MAX_CONSOLE_LINES;
+  SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), coninfo.dwSize);
+
+  bool result = true;
+  FILE* fp;
+
+  // Redirect STDIN if the console has an input handle
+  if (GetStdHandle(STD_INPUT_HANDLE) != INVALID_HANDLE_VALUE)
+    if (freopen_s(&fp, "CONIN$", "r", stdin) != 0)
+      result = false;
+    else
+      setvbuf(stdin, NULL, _IONBF, 0);
+
+  // Redirect STDOUT if the console has an output handle
+  if (GetStdHandle(STD_OUTPUT_HANDLE) != INVALID_HANDLE_VALUE)
+    if (freopen_s(&fp, "CONOUT$", "w", stdout) != 0)
+      result = false;
+    else
+      setvbuf(stdout, NULL, _IONBF, 0);
+
+  // Redirect STDERR if the console has an error handle
+  if (GetStdHandle(STD_ERROR_HANDLE) != INVALID_HANDLE_VALUE)
+    if (freopen_s(&fp, "CONOUT$", "w", stderr) != 0)
+      result = false;
+    else
+      setvbuf(stderr, NULL, _IONBF, 0);
+}
+
+#endif
+//End of File
+
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
 {
-    char found_file[30];
+  RedirectIOToConsole();
+  printf("Test!\n");
+  
+  char found_file[30];
     int input_type;
 #ifdef STU_DEBUG
     int itr_remap_pal_num;
